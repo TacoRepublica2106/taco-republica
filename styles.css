@@ -7,6 +7,7 @@ body {
     color: #333;
 }
 
+/* Estilos para el header y el logo */
 header {
     background: #FF5733;
     color: white;
@@ -18,11 +19,23 @@ header {
 header .logo {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 10px; /* Cambiado de left a right */
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+#inicio {
+    scroll-behavior: smooth;
+}
+
+/* Estilo para el eslogan */
+#inicio .slogan {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #888;
+    margin-top: 10px;
 }
 
 header h1 {
@@ -138,6 +151,118 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Estilos para el confeti */
+.confeti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #FF5733;
+    border-radius: 50%;
+    z-index: 100;
+    pointer-events: none;
+    animation: confeti-fall 2s ease-out;
+}
+
+@keyframes confeti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Estilos para el carrusel de imágenes */
+.galeria {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos móviles */
+    scroll-behavior: smooth; /* Desplazamiento suave en navegadores modernos */
+    gap: 10px;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.slide {
+    flex: 0 0 auto;
+    width: 80%;
+    min-width: 200px;
+    scroll-snap-align: start;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 5px; /* Ajusta el margen derecho para centrar el texto */
+}
+
+.slide p {
+    position: absolute;
+    bottom: 10px;
+    left: -5.5px; /* Ajusta la posición del recuadro negro */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center; /* Alinea el texto al centro */
+    width: calc(100% - 10px); /* Ocupa el ancho completo menos el margen */
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Clase para cambio de color */
+.change-color {
+    transition: background-color 0.5s ease;
+}
+
+/* Clase para aparecer gradualmente */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact-info p.ubicacion-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #228B22; /* Verde mexicano */
+    margin-bottom: 10px; /* Espacio inferior */
 }
 
 /* Animaciones para el carrusel */
