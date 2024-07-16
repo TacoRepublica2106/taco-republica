@@ -11,7 +11,7 @@ body {
 header {
     background: #FF5733;
     color: white;
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: center;
     position: relative;
 }
@@ -26,6 +26,7 @@ header .logo {
     object-fit: cover;
 }
 
+/* Efecto de desplazamiento suave en el enlace de inicio */
 #inicio {
     scroll-behavior: smooth;
 }
@@ -36,6 +37,26 @@ header .logo {
     font-style: italic;
     color: #888;
     margin-top: 10px;
+}
+
+
+/* Estilos adicionales para la sección de menú */
+section#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+section#menu ul li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Aumentado el radio de borde */
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+section#menu ul li:hover {
+    transform: scale(1.05);
 }
 
 header h1 {
@@ -153,6 +174,8 @@ footer p {
     margin: 0;
 }
 
+
+
 /* Estilos para el confeti */
 .confeti {
     position: fixed;
@@ -174,6 +197,8 @@ footer p {
         opacity: 0;
     }
 }
+
+
 
 /* Estilos para el carrusel de imágenes */
 .galeria {
@@ -228,6 +253,7 @@ footer p {
     transform: translateY(0);
 }
 
+
 /* Clase para cambio de color */
 .change-color {
     transition: background-color 0.5s ease;
@@ -257,76 +283,9 @@ footer p {
     height: 100%;
     border: 0;
 }
-
 .contact-info p.ubicacion-text {
     font-size: 1.2rem;
     font-weight: bold;
     color: #228B22; /* Verde mexicano */
     margin-bottom: 10px; /* Espacio inferior */
-}
-
-/* Animaciones para el carrusel */
-#imagenes .galeria img {
-    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
-}
-
-#imagenes .galeria img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-/* Estilos para el texto del carrusel */
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    width: 80%;
-}
-
-/* Estilo para el mapa */
-.map-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.map-container iframe {
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border: 0;
-}
-
-/* Consulta de medios para pantallas de 600px o menos */
-@media (max-width: 600px) {
-    header {
-        padding: 0.5rem 0;
-    }
-
-    header .logo {
-        position: static;
-        display: block;
-        margin: 0 auto;
-        width: 80px;
-        height: 80px;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    #contacto {
-        margin-bottom: 2rem;
-    }
 }
