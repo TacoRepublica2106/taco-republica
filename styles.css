@@ -290,3 +290,36 @@ footer p {
     margin-bottom: 10px; /* Espacio inferior */
 }
 
+/* Agrega esto al final de tu archivo styles.css */
+
+/* Consulta de medios para pantallas de 600px o menos */
+@media (max-width: 600px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    header .logo {
+        position: static;
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    #contacto {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
