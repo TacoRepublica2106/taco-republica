@@ -139,3 +139,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ejecutar la función al cargar la página
     addClickAnimations();
 });
+
+
+// Función para comprobar si un elemento está visible en la ventana
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Función para manejar el desplazamiento
+function handleScroll() {
+    const elements = document.querySelectorAll('.slide-local');
+    elements.forEach(el => {
+        if (isElementInViewport(el)) {
+            el.classList.add('animate');
+        }
+    });
+}
+
+// Añadir el manejador de eventos de desplazamiento
+window.addEventListener('scroll', handleScroll);
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', handleScroll);
